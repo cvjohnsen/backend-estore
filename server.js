@@ -18,15 +18,13 @@ app.use(
   })
 );
 
-const PORT = 6000;
-
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
 // Routes
 app.use("/product", productRouter);
 
-// Create Port
+// Create Port (add process.env.PORT)
 const PORT = process.env.PORT || 6000;
 
 //Base Route
