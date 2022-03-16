@@ -6,6 +6,7 @@ const productRouter = require("./routes/productRoutes");
 const morgan = require("morgan");
 const cors = require("cors");
 
+
 // Create app
 const app = express();
 //Configure the App
@@ -22,6 +23,10 @@ app.use(bodyParser.json());
 app.use(morgan("dev"));
 
 // Routes
+// app.get("/seed", (req, res) => {
+//   productModel.insertMany(ProductData);
+//   // productModel.deleteMany({});
+// });
 app.use("/product", productRouter);
 
 // Create Port (add process.env.PORT)

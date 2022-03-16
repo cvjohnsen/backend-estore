@@ -16,12 +16,6 @@ productRouter.get("/", (req, res) => {
 });
 
 productRouter.post("/", (req, res) => {
-  const products = req.body;
-  products.name = true;
-  products.description = true;
-  products.price = true;
-  products.quantity = true;
-
   Product.create(products, (error, result) => {
     if (error) {
       res.status(400).json({ message: error.message });
